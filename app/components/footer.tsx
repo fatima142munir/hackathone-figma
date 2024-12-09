@@ -1,14 +1,12 @@
 import Image from "next/image";
-import logo from "../public/images/Logo Icon.png"
-import visa from "../public/images/Union.png"
-import vector from "../public/images/Vector.png"
-import paypal from "../public/images/Group 12.png"
-import logos from "../public/images/Group 11.png"
-import facebook from "../public/images/facebook.png";
-import twitter from "../public/images/twitter.png"
-import insta from "../public/images/insta.png"
-import pintrest from "../public/images/pintrest.png"
-import youtube from "../public/images/youtube.png"
+import { FaFacebook, FaPinterest, FaYoutube } from "react-icons/fa";
+import { TiSocialTwitter } from "react-icons/ti";
+import { CiInstagram } from "react-icons/ci";
+import logo from "../../public/Logo Icon.png"
+import visa from "../../public/Union.png"
+import vector from "../../public/Vector.png"
+import paypal from "../../public/Group 12.png"
+import logos from "../../public/Group 11.png"
 import Link from "next/link";
 
 const Footer = () => {
@@ -26,26 +24,25 @@ const Footer = () => {
                                 Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum.
                                 Cras egestas purus
                             </p>
-
+                                    {/* {border-2 border-shopCount rounded-full}  */}
 
                             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 pr-10 justify-center sm:justify-start">
-                                <Link href={'/'} className="text-gray-500 border-2 border-shopCount pt-2 px-2 rounded-full ">
-                                    <Image alt="facebook" src={facebook}></Image>
+                                <Link href={'/'} className="text-gray-500 w-[38] py-2 px-2 hover:text-shopCount hover:border-2 hover:border-shopCount hover:rounded-full">
+                                    <FaFacebook/>
+                                </Link>
+                                <Link href={'/'} className="ml-3 text-gray-500 w-[38] py-2 px-2 hover:text-shopCount hover:border-2 hover:border-shopCount hover:rounded-full">
+                                    <TiSocialTwitter/>
 
                                 </Link>
-                                <Link href={'/'} className="ml-3 text-gray-500 items-center">
-                                    <Image alt="twitter" src={twitter}></Image>
+                                <Link href={'/'} className="ml-3 text-gray-500 w-[38] py-2 px-2 hover:text-shopCount hover:border-2 hover:border-shopCount hover:rounded-full">
+                                    <CiInstagram/>
 
                                 </Link>
-                                <Link href={'/'} className="ml-3 text-gray-500">
-                                    <Image alt="insta image" src={insta}></Image>
-
+                                <Link href={'/'} className="ml-3 text-gray-500 w-[38] py-2 px-2 hover:text-shopCount hover:border-2 hover:border-shopCount hover:rounded-full">
+                                    <FaPinterest />
                                 </Link>
-                                <Link href={'/'} className="ml-3 text-gray-500 ">
-                                    <Image  alt="pintrest image" src={pintrest}></Image>
-                                </Link>
-                                <Link href={'/'} className="ml-3 text-gray-500 ">
-                                    <Image  alt="youtube image" src={youtube}></Image>
+                                <Link href={'/'} className="ml-3 text-gray-500 w-[38] py-2 px-2 hover:text-shopCount hover:border-2 hover:border-shopCount hover:rounded-full">
+                                    <FaYoutube />
                                 </Link>
                             </span>
 
@@ -96,9 +93,9 @@ const Footer = () => {
                         <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
                             <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
                                 <label htmlFor="footer-field" className="leading-7 text-sm text-gray-600"></label>
-                                <input type="text" placeholder="Your Email" id="footer-field" name="footer-field" className="w-72 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+                                <input type="text" placeholder="Your Email" id="footer-field" name="footer-field" className="w-72 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
                             </div>
-                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-shopCount py-2 px-6 focus:outline-none hover:bg-shopCount rounded">Subscribe</button>
+                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white z-10 bg-btnBackground py-2 px-6 focus:outline-none rounded">Subscribe</button>
                         </div>
                         <p className="text-gray-500 text-sm mt-2 md:text-left text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit quis corrupti commodi.
                             {/* <span className="lg:block hidden">waistcoat green juice</span> */}

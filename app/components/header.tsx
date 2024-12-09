@@ -1,13 +1,13 @@
 import Image from "next/image";
-import cart from "../public/images/Buy 2.png"
-import logo from "../public/images/Logo Icon.png"
+import cart from "../../public/Buy 2.png"
+import logo from "../../public/Logo Icon.png"
 
 const Header = () => {
     return (
         <div className="bg-backgroundDark">
             <div className="md:mx-auto container m-auto navbar bg-backgroundDark py-4">
                 <div className="flex-1 gap-3">
-                    <span><Image alt="logoimage" src={logo}></Image></span>
+                    <span><Image  alt="logoimage" src={logo}></Image></span>
                     <h1 className="text-[26px] font-medium">Comforty</h1>
                 </div>
                 <div className="bg-backgroundLight p-[11px] px-[16px] rounded-lg">

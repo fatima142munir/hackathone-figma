@@ -1,6 +1,5 @@
 import Image from "next/image";
-import arrow from "../public/images/Right 24px.png"
-import productHero from "../public/images/Product Image.png"
+
 
 const Hero = () => {
     return (
@@ -16,12 +15,11 @@ const Hero = () => {
 
                     </h1>
                     <div className="flex justify-center my-10">
-                        <button className="inline-flex text-white bg-btnBackground border-0 py-3 px-7 focus:outline-none hover:bg-indigo-600 rounded-lg justify-center font-semibold text-[16px]">Shop Now <Image className="ml-4" alt="arrow" src={arrow}></Image></button>
+                        <button className="inline-flex text-white bg-btnBackground border-0 py-3 px-7 focus:outline-none hover:bg-indigo-600 rounded-lg justify-center font-semibold text-[16px]">Shop Now <Image width={24} height={24} className="ml-4" alt="arrow" src={'/Right 24px.png'}></Image></button>
                     </div>
                 </div>
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    {/* <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"> */}
-                    <Image alt="product image" src={productHero}></Image>
+                    <Image alt="product image" width={434} height={584} src={'/Product Image.png'}></Image>
                 </div>
             </div>
         </section>
