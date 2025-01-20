@@ -15,6 +15,9 @@ const config: Config = {
         shopCount: "#007580",
         btnBackground: "#029FAE",
         btnColor: "#029eaf",
+        newTagColor: "#01AD5A",
+        salesTagColor: "#F5813F",
+        newsletterBackground: "#f8f9fb"
       },
       writingMode: {
         'vertical-lr': 'vertical-lr',

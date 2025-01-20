@@ -1,15 +1,15 @@
 import Image from "next/image";
 
 const Explore = () => {
-    let sen = "EXPLORE NEW AND POPULAR STYLES";
-    let toVerticle = sen.split("");
+    // let sen = "EXPLORE NEW AND POPULAR STYLES";
+    // let toVerticle = sen.split("");
 
 
     return (
         <header className="container mx-auto px-4 py-10 lg:py-16">
             <div className="relative grid grid-cols-1 md:grid-cols-[3]">
 
-                <div className=" md:text-3xl text-xl font-medium text-zinc-900 md:-rotate-90 md:w-full md:-translate-x-2/4 md:px-7 md:h-[80px]">
+                <div className=" md:text-3xl text-xl font-medium text-zinc-900 md:-rotate-90 md:w-full md:-translate-x-2/4 md:px-3 md:h-[80px] md:p-0 pt-8 pb-8">
                     EXPLORE NEW AND POPULAR STYLES
                 </div>
                 <div className="flex flex-col md:flex-row items-center gap-8">

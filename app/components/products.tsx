@@ -1,73 +1,104 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LuShoppingCart } from "react-icons/lu";
+import { Product_T } from "../type";
 
-const Products = () => {
-    return (
-        <section className="text-gray-600 body-font m-auto ">
-            <div className="container px-5 py-12 mx-auto justify-center">
-                <div className="flex flex-wrap m-auto  justify-center ">
 
-                    <div className="lg:w-1/4 md:w-1/2 p-4">
-                        <Link href={'/'} className="block relative rounded justify-center overflow-hidden">
-                            <Image width={312} height={312} alt="product" src={'/Image.png'}></Image>
-                        </Link>
-                        <div className="flex justify-between">
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-[16px] tracking-widest font-normal mb-1">Library Stool Chair</h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">$20</h2>
-                            </div>
-                            <div className="pt-4 px-4 mt-4 text-2xl justify-center hover:bg-shopCount hover:text-white bg-backgroundDark rounded-xl">
-                                <LuShoppingCart />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/4 md:w-1/2 p-4">
-                        <Link href={'/'} className="block relative rounded overflow-hidden">
-                            <Image width={312} height={312} alt="product" src={'/Image (1).png'}></Image>
-                        </Link>
-                        <div className="flex justify-between">
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-[16px] tracking-widest font-normal mb-1">Library Stool Chair</h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">$20<span className="text-gray-400 text-sm line-through px-1">$39</span></h2>
-                            </div>
-                            <div className="pt-4 px-4 mt-4 text-2xl justify-center bg-backgroundDark rounded-xl hover:bg-shopCount hover:text-white">
-                                <LuShoppingCart  />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/4 md:w-1/2 p-4 ">
-                        <Link href={'/'} className="block relative rounded overflow-hidden">
-                            <Image width={312} height={312} alt="product" src={'/Image (2).png'}></Image>
-                        </Link>
-                        <div className="flex justify-between">
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-[16px] tracking-widest font-normal mb-1">Library Stool Chair</h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">$20</h2>
-                            </div>
-                            <div className="pt-4 px-4 mt-4 text-2xl justify-center bg-backgroundDark rounded-xl hover:bg-shopCount hover:text-white">
-                                <LuShoppingCart />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/4 md:w-1/2 p-4">
-                        <Link href={'/'} className=" rounded">
-                            <Image width={312} height={312} alt="product" src={'/Image (3).png'}></Image>
-                        </Link>
-                        <div className="flex justify-between">
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-[16px] tracking-widest font-normal mb-1">Library Stool Chair</h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">$20</h2>
-                            </div>
-                            <div className="pt-4 px-4 mt-4 text-2xl justify-center bg-backgroundDark rounded-xl hover:bg-shopCount hover:text-white">
-                                <LuShoppingCart />
-                            </div>
-                        </div>
-                    </div>
+export const ProductCard = ({ product }: { product: Product_T }) => (
+    <div key={product.id} className="group relative rounded-lg bg-white">
+        <div className="relative aspect-square overflow-hidden rounded-lg">
+            {product.isNew && (
+                <button className="absolute bg-newTagColor w-[29] h-[14] font-medium text-white py-[2px] px-3 rounded text-[13px] m-4">New</button>
+
+            )}
+            {product.isSale && (
+                <button className="absolute bg-salesTagColor w-[29] h-[14] font-medium text-white py-[2px] px-3 rounded text-[13px] m-4">Sales</button>
+
+            )}
+            <Link href={`/product/${product.id}`}>
+                <Image
+                    src={product.image}
+                    alt={product.title}
+                    height={400}
+                    width={400}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    aria-label={`View details of ${product.title}`}
+                />
+            </Link>
+        </div>
+        <div className="mt-4 flex items-center justify-between">
+            <div>
+                <h3 className="text-sm text-black">{product.title}</h3>
+                <div className="mt-1 flex items-center gap-2">
+                    <span className="text-lg font-medium text-black">
+                        ${product.price}
+                    </span>
+                    {product.originalPrice && (
+                        <span className="text-sm text-gray-500 line-through">
+                            ${product.originalPrice}
+                        </span>
+                    )}
                 </div>
             </div>
-        </section>
-    )
+            <button
+                className="rounded-xl bg-backgroundDark p-2 text-black hover:text-white transition-colors hover:bg-shopCount"
+                aria-label={`Add ${product.title} to cart`}>
+                <LuShoppingCart className="h-5 w-5" />
+                
+            </button>
+        </div>
+    </div>
+);
+
+export default function AllProduct() {
+    const products: Product_T[] = [
+        {
+            id: 1,
+            title: "Library Stool Chair",
+            price: 20,
+            image: "/Image.png",
+            isNew: true,
+        },
+        {
+            id: 2,
+            title: "Library Stool Chair",
+            price: 20,
+            originalPrice: 30,
+            image: "/Image (1).png",
+            isSale: true,
+        },
+        {
+            id: 5,
+            title: "Library Stool Chair",
+            price: 20,
+            image: "/Image (2).png",
+            isNew: false,
+        },
+        { id: 4, title: "Library Stool Chair", price: 20, image: "/Image (3).png" },
+        {
+            id: 6,
+            title: "Library Stool Chair",
+            price: 20,
+            originalPrice: 30,
+            image: "/cat1.png",
+            isNew: true,
+            isSale: false,
+        },
+        { id: 7, title: "Library Stool Chair", price: 20, image: "/item-category-2.png", isSale: true },
+        { id: 8, title: "Library Stool Chair", price: 20, image: "/chair_cushion.png" },
+        { id: 3, title: "Library Stool Chair", price: 20, image: "/Image.png" },
+    ];
+
+    return (
+        <div className="container mx-auto px-4 py-20">
+            
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
+            </div>
+        </div>
+    );
 }
 
-export default Products;
+

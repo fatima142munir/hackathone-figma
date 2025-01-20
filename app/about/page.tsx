@@ -1,8 +1,11 @@
-const Compo = ()=>{
-    return(
-        <div>
-            <h2>About</h2>
-        </div>
+import AboutHero from "../components/aboutSection";
+
+const Compo = () => {
+    return (
+        <>
+            <AboutHero />
+
+        </>
     )
 }
 

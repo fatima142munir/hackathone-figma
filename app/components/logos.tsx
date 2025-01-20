@@ -30,7 +30,7 @@ const Logos = () => {
         {
             imgAlt: "company logo",
             imgUrl: "/Logo (6).png"
-        },
+        }
     ]
     return (
         <div className="container flex flex-wrap justify-center sm:gap-28  gap-3 items-center m-auto">

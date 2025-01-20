@@ -12,11 +12,11 @@ const Navbar = () => {
         },
         {
             name: "Product",
-            link: "/product"
+            link: "/products"
         },
         {
             name: "Pages",
-            link: "./"
+            link: "/faq"
         },
         {
             name: "About",
@@ -39,7 +39,7 @@ const Navbar = () => {
                     
                 </nav>
                 <div>
-                    <p className="text-[14px] font-normal">Contact: <span className="font-medium text-[14px] text-black"> (808) 555-0111</span></p> 
+                    <p className="text-[14px] font-normal"><Link href={"/contact"}>Contact: </Link> <span className="font-medium text-[14px] text-black"> (808) 555-0111</span></p> 
                 </div>
             </div>
         </header>
